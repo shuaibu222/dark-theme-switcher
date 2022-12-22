@@ -1,0 +1,53 @@
+@use "../utils/" as u;
+
+.section {
+  padding-top: u.rem(30);
+  padding-bottom: u.rem(30);
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(20);
+
+    > .first-heading {
+      display: grid;
+      gap: u.rem(4);
+      padding-bottom: u.rem(25);
+      border-bottom: 1px solid u.$Desaturated-BlueText;
+
+      > p {
+        color: u.$DarkGrayishBlue-Text;
+        font-size: u.rem(14);
+      }
+    }
+
+    > .toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      > p {
+        font-size: u.rem(14);
+        text-transform: capitalize;
+        color: u.$DarkGrayishBlue-Text;
+      }
+
+      > .toggle-container {
+        width: u.rem(50);
+        height: u.rem(25);
+        border-radius: u.rem(12);
+        background: u.$Toggle;
+        position: relative;
+
+        > .toggle-ball {
+          width: u.rem(20);
+          height: u.rem(19);
+          border-radius: 10px;
+          position: absolute;
+          top: 3px;
+          left: 4px;
+          background: u.$White-BG;
+        }
+      }
+    }
+  }
+}
