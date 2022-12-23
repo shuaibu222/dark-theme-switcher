@@ -1,0 +1,166 @@
+@use "../utils/" as u;
+
+.section {
+  // This is the large cards style
+
+  &__big-cards {
+    margin-top: u.rem(40);
+    display: grid;
+    gap: u.rem(26);
+    margin-bottom: u.rem(40);
+
+    @include u.breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include u.breakpoint-up(xlarge) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      display: grid;
+      place-content: center;
+      padding: u.rem(30) u.rem(30) u.rem(30) u.rem(30);
+      border-radius: u.rem(5);
+      background: u.$LightGrayishBlue-CardBG;
+      cursor: pointer;
+      transition: 300ms ease-in-out;
+      z-index: 1;
+
+      > .username {
+        display: flex;
+        gap: u.rem(6);
+        align-items: center;
+        justify-content: center;
+        margin-bottom: u.rem(17);
+
+        > p {
+          font-size: u.rem(11);
+          font-weight: 700;
+          color: u.$DarkGrayishBlue-Text;
+        }
+      }
+      > .followers-num {
+        font-size: u.rem(55);
+        font-weight: 700;
+      }
+      > .followers-text {
+        text-transform: uppercase;
+        font-size: u.rem(12);
+        letter-spacing: u.rem(6);
+        color: u.$DarkGrayishBlue-Text;
+      }
+      > .current {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: u.rem(5);
+        margin-top: u.rem(25);
+
+        > p {
+          font-size: u.rem(11);
+          font-weight: 700;
+          color: u.$LimeGreen;
+        }
+        > .icon-down {
+          color: u.$BrightRed;
+        }
+      }
+      // Diffrent kind of borders except card-three because is linear-gradient
+      &.card-one {
+        border-top: 4px solid u.$Facebook;
+      }
+      &.card-two {
+        border-top: 4px solid u.$Twitter;
+      }
+      &.card-three {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: u.rem(4);
+          background: u.$Instagram;
+          border-radius: u.rem(6);
+        }
+      }
+      &.card-four {
+        border-top: 4px solid u.$YouTube;
+      }
+
+      &:hover {
+        background: hsl(225, 11%, 86%);
+      }
+    }
+  }
+
+  // This is the small cards style
+  &__small-cards {
+    display: grid;
+    gap: u.rem(20);
+
+    @include u.breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include u.breakpoint-up(xlarge) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    > .cards {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: u.rem(25);
+      border-radius: u.rem(4);
+      background: u.$LightGrayishBlue-CardBG;
+      transition: 300ms ease-in-out;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+
+      > .overview-first {
+        display: grid;
+        gap: u.rem(25);
+
+        > .overview-text {
+          font-size: u.rem(14);
+          font-weight: 700;
+          color: u.$DarkGrayishBlue-Text;
+        }
+
+        > .overview-num {
+          font-size: u.rem(32);
+          font-weight: 700;
+        }
+      }
+
+      > .overview-second {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        gap: u.rem(40);
+
+        > .percentage {
+          display: flex;
+          align-items: center;
+          gap: u.rem(4);
+
+          > p {
+            font-size: u.rem(11);
+            font-weight: 700;
+            color: u.$LimeGreen;
+          }
+          > .icon-down {
+            color: u.$BrightRed;
+          }
+        }
+      }
+
+      &:hover {
+        background: hsl(225, 11%, 86%);
+      }
+    }
+  }
+}

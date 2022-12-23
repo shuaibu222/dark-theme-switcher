@@ -7,16 +7,35 @@
     display: flex;
     flex-direction: column;
     gap: u.rem(20);
+    z-index: 1;
 
+    @include u.breakpoint-up(medium) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+    }
     > .first-heading {
       display: grid;
       gap: u.rem(4);
       padding-bottom: u.rem(25);
       border-bottom: 1px solid u.$Desaturated-BlueText;
 
+      @include u.breakpoint-up(medium) {
+        border: none;
+      }
+
+      > .heading {
+        font-size: u.rem(23);
+
+        @include u.breakpoint-up(medium) {
+          font-size: u.rem(25);
+        }
+      }
+
       > p {
         color: u.$DarkGrayishBlue-Text;
         font-size: u.rem(14);
+        font-weight: 700;
       }
     }
 
@@ -24,6 +43,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      cursor: pointer;
+
+      @include u.breakpoint-up(medium) {
+        gap: u.rem(10);
+      }
 
       > p {
         font-size: u.rem(14);
@@ -49,5 +73,9 @@
         }
       }
     }
+  }
+  &__header2 {
+    margin-bottom: u.rem(20);
+    color: u.$DarkGrayishBlue-Text;
   }
 }
