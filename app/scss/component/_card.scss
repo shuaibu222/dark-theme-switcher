@@ -23,7 +23,7 @@
       border-radius: u.rem(5);
       background: u.$LightGrayishBlue-CardBG;
       cursor: pointer;
-      transition: 300ms ease-in-out;
+      transition: 150ms ease-in-out;
       z-index: 1;
 
       > .username {
@@ -115,7 +115,7 @@
       padding: u.rem(25);
       border-radius: u.rem(4);
       background: u.$LightGrayishBlue-CardBG;
-      transition: 300ms ease-in-out;
+      transition: 150ms ease-in-out;
       letter-spacing: 0.5px;
       cursor: pointer;
 

@@ -43,7 +43,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      cursor: pointer;
 
       @include u.breakpoint-up(medium) {
         gap: u.rem(10);
@@ -70,6 +69,7 @@
           top: 3px;
           left: 4px;
           background: u.$White-BG;
+          transition: all 200ms ease-in-out;
         }
       }
     }

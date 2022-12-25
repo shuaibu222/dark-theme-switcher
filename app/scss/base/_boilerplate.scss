@@ -61,3 +61,39 @@ a {
 .icon-down {
   color: u.$BrightRed;
 }
+
+// My dark theme shortcut way
+.dark-bg {
+  background: u.$VeryDarkBlue-BG !important;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 36%;
+    background: u.$VeryDarkBlue-Top-BGPattern;
+    border-radius: u.rem(20);
+  }
+}
+.card-bg {
+  background: u.$Dark-Desaturated-BlueCard-BG !important;
+
+  &:hover {
+    background: hsla(231, 17%, 47%, 0.338) !important;
+  }
+}
+.white-dark {
+  color: u.$WhiteText;
+}
+.toggle-dark {
+  background-image: linear-gradient(
+    to right,
+    hsl(146, 68%, 55%),
+    hsl(210, 78%, 56%)
+  ) !important;
+}
+.animate {
+  transform: translate(23px);
+}
