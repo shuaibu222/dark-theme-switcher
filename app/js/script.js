@@ -10,13 +10,6 @@ toggle.addEventListener("click", function () {
   body.classList.toggle("dark-bg");
   toggle.classList.toggle("toggle-dark");
   toggleAnimation.classList.toggle("animate");
-  // if (body.classList.contains("dark-bg")) {
-  //   toggleAnimation.classList.add("slide-in");
-  //   toggleAnimation.classList.remove("slide-out");
-  // } else {
-  //   toggleAnimation.classList.remove("slide-in");
-  //   toggleAnimation.classList.add("slide-out");
-  // }
   cards.forEach(function (c) {
     c.classList.toggle("card-bg");
   });
